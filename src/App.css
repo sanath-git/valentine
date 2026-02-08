@@ -1,38 +1,378 @@
-.App {
-  text-align: center;
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.card {
+  position: relative;
+  z-index: 2;
+}
+.bg {
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe6f0, #fff1d6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating hearts */
+.floating-hearts::before,
+.floating-hearts::after {
+  content: "💗 💕 💖 💘 💓";
+  position: absolute;
+  width: 200%;
+  animation: float 12s linear infinite;
+  opacity: 0.4;
+}
+
+.floating-hearts::after {
+  animation-duration: 18s;
+  opacity: 0.25;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Card */
+.card {
+  background: white;
+  padding: 40px;
+  width: 360px;
+  text-align: center;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(255, 105, 180, 0.25);
+  animation: pop 0.5s ease;
+  z-index: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h1 {
+  color: #ff4d88;
+}
+
+.card p {
+  color: #666;
+}
+
+.love-img {
+  width: 140px;
+  margin: 20px 0;
+}
+
+.btn-row {
+  margin-top: 25px;
+  position: relative;
+  height: 80px;
+}
+
+button {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff5f9e, #ff85b3);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.yes:hover {
+  transform: scale(1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.no {
+  background: #eee;
+  color: #555;
+  position: absolute;
+}
+
+/* Success */
+.success {
+  background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+}
+
+.emoji {
+  font-size: 48px;
+}
+
+/* Animations */
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
+.heartbeat {
+  animation: heartbeat 1.6s infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.05);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+
+/* 📱 Mobile Responsive */
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .card h1 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .love-img {
+    width: 110px;
+  }
+
+  .btn-row {
+    height: 120px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px 22px;
+  }
+
+  .yes {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+  .no {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .emoji {
+    font-size: 40px;
+  }
+}
+
+/* 💓 Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .heartbeat {
+    animation: none;
+  }
+
+  .confetti::before {
+    animation: none;
+  }
+}
+
+.heart-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Base heart layer */
+.heart-background::before,
+.heart-background::after {
+  content: "💗 💕 💖 💘 💓 💞";
+  position: absolute;
+  inset: -50%;
+  font-size: 18px;
+  line-height: 2.4;
+  text-align: center;
+  opacity: 0.35;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 192, 203, 0.6),
+    rgba(255, 182, 193, 0.4),
+    rgba(255, 105, 180, 0.5)
+  );
+
+  animation: floatVertical 10s ease-in-out infinite;
+}
+
+/* Second layer = depth */
+.heart-background::after {
+  font-size: 14px;
+  opacity: 0.25;
+  animation-duration: 14s;
+}
+
+@keyframes floatVertical {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bg {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+}
+
+.note-card {
+  position: relative;
+  width: 360px;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff, #fff0f5);
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(255, 105, 180, 0.3);
+  z-index: 3;
+  animation: noteFloat 4s ease-in-out infinite;
+}
+
+.note-card h2 {
+  color: #ff4d88;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.note-card textarea {
+  width: 100%;
+  height: 160px;
+  border-radius: 14px;
+  border: 2px solid #ffd1dc;
+  padding: 14px;
+  font-size: 15px;
+  resize: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.note-card textarea::placeholder {
+  color: #ff9fbf;
+}
+
+.note-footer {
+  text-align: center;
+  margin-top: 12px;
+  color: #ff6f9f;
+  font-size: 14px;
+}
+
+/* Floating animation */
+@keyframes noteFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.note-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.note-hearts::before,
+.note-hearts::after {
+  content: "💖 💕 💗 💘 💓";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  font-size: 16px;
+  opacity: 0.25;
+  animation: heartsInside 12s ease-in-out infinite;
+}
+
+.note-hearts::after {
+  font-size: 12px;
+  opacity: 0.18;
+  animation-duration: 18s;
+}
+
+@keyframes heartsInside {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .note-card {
+    width: 90%;
+  }
+
+  .note-card textarea {
+    height: 140px;
+  }
+}
+.note-content {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  padding: 16px;
+  border: 2px solid #ffd1dc;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.note-content p {
+  margin: 6px 0;
+}
+.success-note {
+  margin-top: 14px;
+}
+
