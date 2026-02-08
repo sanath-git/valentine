@@ -164,7 +164,7 @@ button {
   }
 
   .love-img {
-    width: 110px;
+            width: -webkit-fill-available;
   }
 
   .btn-row {

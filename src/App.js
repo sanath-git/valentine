@@ -30,12 +30,11 @@ const noTexts = [
 const loveNoteText = `
 My love ❤️,
 
-From the moment you came into my life,
-everything became brighter and warmer.
-You are my smile on hard days,
-my calm in chaos, and my forever favorite person.
+From the moment you came into my life, everything became brighter and warmer.
+You are my smile on hard days, my calm in chaos, and my forever favorite person.
 
-Happy Valentine’s Day 💕
+Happy Valentine’s Week. 
+I Love you Babaaaaa 💕
 `;
 
 export default function App() {
@@ -79,7 +78,7 @@ export default function App() {
             <h1>💖 Will you be my Valentine? 💖</h1>
 
             <img
-              src="https://i.imgur.com/8Km9tLL.png"
+              src="https://t4.ftcdn.net/jpg/05/84/66/13/360_F_584661359_CN18OI3yMmh8s154PUZYswxKzZjgLlFd.jpg"
               className="love-img"
             />
 
