@@ -270,6 +270,7 @@ button {
   box-shadow: 0 30px 60px rgba(255, 105, 180, 0.3);
   z-index: 3;
   animation: noteFloat 4s ease-in-out infinite;
+  margin: 10px;
 }
 
 .note-card h2 {
@@ -374,5 +375,46 @@ button {
 }
 .success-note {
   margin-top: 14px;
+}
+
+.note-content {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  padding: 16px;
+  border: 2px solid #ffd1dc;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+
+  max-height: 300px;          /* 👈 controls visible height */
+  overflow-y: auto;           /* enable scrolling */
+  scroll-behavior: smooth;    /* smooth scroll */
+}
+
+/* Chrome, Edge, Safari */
+.note-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note-content::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+.note-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+.note-content {
+  scrollbar-width: thin;
+  scrollbar-color: #ffb6c1 transparent;
+}
+
+@media (max-width: 480px) {
+  .note-content {
+    max-height: 160px;
+    font-size: 14px;
+  }
 }
 

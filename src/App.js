@@ -15,14 +15,9 @@ const noTexts = [
   "Bold choice 😅",
   "This is not going as planned 😬",
   "My disappointment is immeasurable 😔",
-  "Okay but… why though? 🤨",
-  "I believed in you 🥺",
-  "Plot twist I didn’t expect 😮",
-  "Even my code is sad now 💻💔",
   "Loading hope… failed ❌",
   "You woke up and chose chaos 😌",
   "I’ll pretend I didn’t see that 🙃",
-  "Heart.exe has stopped working 💔",
   "Still time to change your mind 👀",
 ];
 
@@ -30,11 +25,15 @@ const noTexts = [
 const loveNoteText = `
 My love ❤️,
 
-From the moment you came into my life, everything became brighter and warmer.
-You are my smile on hard days, my calm in chaos, and my forever favorite person.
+From the moment you came into my life, everything felt a little brighter and warmer.
 
-Happy Valentine’s Week. 
-I Love you Babaaaaa 💕
+You’re my smile on tough days, my calm when things feel messy, and the person I always come back to. Even when life gets loud, you somehow make it feel okay.
+
+I know we fight sometimes and say silly things we don’t really mean, but that’s just us figuring things out. Underneath all of that, I know we care about each other and the love is always there, even on the days we don’t say it properly.
+
+And even though it’s only been about four months since we met, it honestly feels like I’ve known you for years. I just want to keep being with you 💕
+Happy Valentine’s Week 💕
+I love you, Babaaaaa ❤️
 `;
 
 export default function App() {
@@ -75,14 +74,17 @@ export default function App() {
       <div className={`card ${!yes ? "heartbeat" : "success"}`}>
         {!yes ? (
           <>
-            <h1>💖 Will you be my Valentine? 💖</h1>
+            <h1>💖 Will you be my Valentine Lilli? 💖</h1>
 
             <img
+            // src="https://tenor.com/view/dare-aggie-dare-aggie-bunny-dare-aggie-bunny-love-dare-aggie-bunny-cuddle-darea-ggie-bunny-cute-gif-16876821357037349333"
               src="https://t4.ftcdn.net/jpg/05/84/66/13/360_F_584661359_CN18OI3yMmh8s154PUZYswxKzZjgLlFd.jpg"
               className="love-img"
             />
 
-            <p>You make my world brighter ✨</p>
+            <p> You make my world brighter ✨ </p>
+            <p>  Be my Valentine and let’s turn every day into
+  a beautiful adventure together 🌍💖</p>
 
             <div className="btn-row">
               <button className="yes" onClick={handleYes}>
@@ -105,6 +107,11 @@ export default function App() {
           <>
             <span className="emoji">🎉</span>
             <h1>Yay!!! 💕</h1>
+<p>
+  Thank you for being my Valentine and choosing me today.
+  I’m so grateful to have you and to share this love with you 💖
+</p>
+
 
             <div className="note-card success-note">
               <div className="note-hearts"></div>
